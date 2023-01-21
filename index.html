@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛОГОС</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="LOGOS">
+            <p class="logo_text">ЛОГОС</p>
+        </div>
+        <div class="nav">
+            <a class="nav_item" href="">О нас</a>
+            <a class="nav_item" href="">Контакты</a>
+        </div>
+        <div>
+            <button>
+                <a class="phone_num" href=""><img class="btn_phone" src="img/btn_phone.png" alt="phone"> +7 (8482) 72-90-83</a>
+            </button>
+        </div>
+    </header>
+    <section class="sec_1">
+        <div class="sec_1_content">
+            <h1>Доставим <br> ваш груз</h1>
+            <div class="feature_div">
+                <img class="pin" src="img/pin.png" alt="*">
+                <p class="feature">Любой груз в любом направлении</p>
+            </div>
+            <div class="feature_div">
+                <img class="pin" src="img/pin.png" alt="*">
+                <p class="feature">Профессионально и ответственно</p>
+            </div>
+            <div class="feature_div">
+                <img class="pin" src="img/pin.png" alt="*">
+                <p class="feature">Выгодно</p>
+            </div>
+            <div class="contacts">
+                <div class="contact">
+                    <img class="contact_img" src="img/phone.png" alt="phone">
+                    <p class="feature">+7(960)8435383</p>
+                </div>
+                <div class="contact">
+                    <img class="contact_img mail_img" src="img/mail.png" alt="mail">
+                    <p class="feature">ooologos22@yandex.ru</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec_2">
+        <h2>О нас</h2>
+        <div class="mooves">
+            <div class="track element-animation"><img class="track2" src="img/track.png"></div>
+            <div class="gruz element-animation"><img class="gruz2" src="img/gruz.png"></div>
+            <div class="gaz element-animation"><img class="gaz2" src="img/gaz.png"></div>
+        </div>
+    </section>
+    <footer>
+        <h2>Контакты</h2>
+        <div class="footer_content">
+            <div class="footer_text">
+                <div class="rows">
+                    <div class="row">
+                        <h3>ТЕЛЕФОН</h3>
+                        <a href="" class="footer_p">+7 (999) 808 65 48</a>
+                    </div>
+                    <div class="row">
+                        <h3>Электронный адрес</h3>
+                        <a href="" class="footer_p">ooologos22@yandex.ru</a>
+                    </div>
+                </div>
+                <div class="address">
+                    <h3>АДРЕС</h3>
+                    <p class="footer_p">Тополиная улица, 12, Тольятти, Самарская область, 445031</p>
+                </div>
+                <div class="time">
+                    <h3>Время работы</h3>
+                    <p class="footer_p">пн-пт: с 8:00 до 20:00 ч.</p>
+                </div>
+                <div class="info">
+                    <h3>РЕКВИЗИТЫ</h3>
+                    <p class="footer_p">ООО «ЛОГОС» <br>
+                        ИНН/КПП 6321441400/632101001 <br>
+                        ТОЧКА ПАО БАНКА "ФК ОТКРЫТИЕ" г.МОСКВА <br>
+                        р/с: 40702810614500011324 <br>
+                        БИК: 044525999 <br>
+                        Кор.счет: 30101810845250000999 <br>
+                        в ГУ БАНКА РОССИИ ПО ЦФО</p>
+                </div>
+            </div>
+            <div class="map">
+                <img class="map_img" src="img/map.png" alt="map">
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function onEntry(entry) {
+        entry.forEach(change => {
+            if (change.isIntersecting) {
+                change.target.classList.add('element-show');
+            }
+        });
+    }
+
+    let options = {
+        threshold: [0.5] };
+    let observer = new IntersectionObserver(onEntry, options);
+    let elements = document.querySelectorAll('.element-animation');
+
+    for (let elm of elements) {
+        observer.observe(elm);
+    }
+</script>
+</html>
